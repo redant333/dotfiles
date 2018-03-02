@@ -1,0 +1,13 @@
+[user]
+        email = 
+        name = Milomir Babic
+[difftool]
+        prompt = false
+[format]
+        pretty = format:%Cred%h%Creset %C(white)%s%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset
+[core]
+        editor = vim
+[alias]
+        full = show --pretty=fuller
+[push]
+        default = simple
