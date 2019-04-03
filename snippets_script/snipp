@@ -1,0 +1,33 @@
+#!/bin/bash
+####################################################
+# This script requires jq, dmenu and xclip packages
+####################################################
+
+# The location where all the items are stored
+snipps_file=~/.snipps.json
+# Create snipps_file if it doesn't exist
+if [[ ! -f $snipps_file ]]
+then
+    echo -e "{\n\"This is a default item. Edit this in $snipps_file\" : \"value to be copied\"\n}" > $snipps_file
+fi
+
+# Read all the keys and choose one with dmenu
+keys=$(jq -r 'keys[]' < $snipps_file)
+chosen_key=$(echo "$keys" | dmenu -i -l 30)
+
+if [[ "$chosen_key" == "" ]]
+then
+    exit 0
+fi
+
+# Parse the value associated with the key
+output=$(jq -r ".\"$chosen_key\"" < $snipps_file)
+
+if [[ "$output" == "null" ]]
+then
+    notify-send "No such key"
+else
+    # Copy the value to clipboard
+    echo -n "$output" | xclip -selection clipboard
+    notify-send "Copied $chosen_key($output)"
+fi
