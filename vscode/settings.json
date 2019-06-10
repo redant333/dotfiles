@@ -1,0 +1,38 @@
+{
+    /* General purpose extensions:
+       jumpy                            code --install-extension johnpyp.vscode-jumpy-plus
+       Bookmarks                        code --install-extension alefragnani.Bookmarks
+       Bracket Pair Colorizer           code --install-extension CoenraadS.bracket-pair-colorizer
+       Highlight Trailing White Spaces  code --install-extension ybaumes.highlight-trailing-white-spaces
+       git-blamer                       code --install-extension howardzuo.vscode-git-blamer
+
+       C++ extensions:
+       C/C++                            code --install-extension ms-vscode.cpptools
+       Doxygen Documentation Generator  code --install-extension cschlosser.doxdocgen
+    */
+
+    /* Use JSON instead of GUI editor */
+    "workbench.settings.editor": "json",
+
+    /* Hide the twitter smiley */
+    "workbench.statusBar.feedback.visible": false,
+
+    /* Turn off explorer decorations (I find them annoying) */
+    "problems.decorations.enabled": false,
+    "explorer.decorations.badges": false,
+    "explorer.decorations.colors": false,
+
+    /* Set a larger font*/
+    "editor.fontSize": 18,
+
+    /* Render whitespace */
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+
+    /* Put snippets on top of autocomplete
+       By default, keywords come before them */
+    "editor.snippetSuggestions": "top",
+
+    /* Do not dim regions under #ifdef */
+    "C_Cpp.dimInactiveRegions": false,
+}
