@@ -132,3 +132,10 @@ alias greph='grep -r --include=\*.{h,hpp,hh}'
 alias -g G='| grep'
 alias -g L="| less"
 alias -g difftool="difftool --dir-diff"
+
+function calculate {
+	zmodload zsh/mathfunc
+	result=$(($@))
+	printf 'res: %s\ndec: %d\nhex: %X\n' "$result" "$result" "$result"
+}
+alias c='noglob calculate'
