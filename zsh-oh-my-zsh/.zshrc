@@ -107,9 +107,9 @@ RPROMPT='%{$fg[white]%}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%{$reset_c
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
-# Open serial port and save all output to ~/logs 
-alias picolog='sudo picocom -b 115200 /dev/ttyUSB0 | tee ~/logs/`date +"%Y-%m-%d_%H-%M-%S"`.log'
-alias picolog1='sudo picocom -b 115200 /dev/ttyUSB1 | tee ~/logs/`date +"%Y-%m-%d_%H-%M-%S"`.log'
+# Open serial port and save all output to ~/logs. Current user needs to be in dialout group.
+alias picolog='picocom -b 115200 /dev/ttyUSB0 | tee ~/logs/`date +"%Y-%m-%d_%H-%M-%S"`.log'
+alias picolog1='picocom -b 115200 /dev/ttyUSB1 | tee ~/logs/`date +"%Y-%m-%d_%H-%M-%S"`.log'
 
 # Open the newest file from current directory in glogg
 alias gllat='glogg *(.om[1])' 
