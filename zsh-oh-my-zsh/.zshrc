@@ -120,7 +120,6 @@ alias gcb='git symbolic-ref --short HEAD' # Current git branch
 # Networking
 alias int='echo -e "Local IP: $(hostname -I)\n" && ping 8.8.8.8' # Print IP and ping Google
 alias iploc='curl ipinfo.io' # Print public IP and IP location. Useful when working with VPN
-alias reif='sudo ifdown eth0 && sudo ifup eth0'
 
 # General purpose
 alias rc='vim ~/.zshrc'
