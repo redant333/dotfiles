@@ -4,6 +4,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# Theme
+ZSH_THEME="ghi"
+
 # Plugins
 plugins=(
 sudo
@@ -19,13 +22,6 @@ source $ZSH/oh-my-zsh.sh
 # Disable shared history. This means that every terminal
 # instance will have its own history.
 unsetopt share_history
-
-# This is needed to make the prompt work properly
-setopt PROMPT_SUBST
-
-# Current folder on the left side and Git branch on the right side
-PROMPT='%{$fg_bold[red]%}ᗈ %{$reset_color%}%~%{$fg_bold[red]%} : %{$reset_color%}'
-RPROMPT='%{$fg[white]%}$(git rev-parse --abbrev-ref HEAD 2> /dev/null)%{$reset_color%}'
 
 # Give syntax highlighting abilities to less (needs source-highlight package)
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
