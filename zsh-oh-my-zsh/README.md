@@ -17,7 +17,7 @@ This folder contains the following:
 
 Run:
 
-```sh -c "$(wget -O- https://raw.githubusercontent.com/redant333/dotfiles/master/zsh-oh-my-zsh/install.sh"```
+```bash -c "$(wget -O- https://raw.githubusercontent.com/redant333/dotfiles/master/zsh-oh-my-zsh/install.sh)"```
 
 or download `install.sh` and run it.
 
