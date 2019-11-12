@@ -13,8 +13,6 @@ This folder contains the following:
 
 ## Automatic
 
-> **WARNING**: The script has not yet been properly tested.
-
 Run:
 
 ```bash -c "$(wget -O- https://raw.githubusercontent.com/redant333/dotfiles/master/zsh-oh-my-zsh/install.sh)"```
