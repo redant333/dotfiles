@@ -44,7 +44,7 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/maste
 echo -e $GREEN_TEXT"\n> Installing Ghi theme"$NORMAL_TEXT
 GHI_PATH=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/ghi.zsh-theme
 GHI_URL="https://raw.githubusercontent.com/redant333/dotfiles/master/zsh-oh-my-zsh/ghi.zsh-theme"
-curl $GHI_URL > $GHI_PATH
+wget -O $GHI_PATH $GHI_URL
 echo -e $GREEN_TEXT"\n> Ghi theme installed to $GHI_PATH"$NORMAL_TEXT
 
 # Download .zshrc
