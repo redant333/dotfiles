@@ -40,8 +40,12 @@ sudo apt install source-highlight
 
 # Download oh-my-zsh
 echo -e $GREEN_TEXT"\n> Installing oh-my-zsh"$NORMAL_TEXT
-export RUNZSH=no
-sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+if [[ ! -d ~/.oh-my-zsh ]]; then
+    export RUNZSH=no
+    sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+else
+    echo -e $GREEN_TEXT"\n> oh-my-zsh already installed"$NORMAL_TEXT
+fi
 
 # Download the theme and put it into oh-my-zsh
 echo -e $GREEN_TEXT"\n> Installing Ghi theme"$NORMAL_TEXT
@@ -56,3 +60,5 @@ RC_URL="https://raw.githubusercontent.com/redant333/dotfiles/master/zsh-oh-my-zs
 wget -O $RC_PATH $RC_URL
 echo -e $GREEN_TEXT"\n> .zshrc installed to $RC_PATH"$NORMAL_TEXT
 
+# Done
+echo -e $GREEN_TEXT"\n> All done, you can start zsh now"$NORMAL_TEXT
