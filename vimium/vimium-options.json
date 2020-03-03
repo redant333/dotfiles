@@ -1,5 +1,5 @@
 {
-  "settingsVersion": "1.62.4",
+  "settingsVersion": "1.66",
   "exclusionRules": [
     {
       "pattern": "https?://mail.google.com/*",
@@ -9,7 +9,7 @@
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "map F LinkHints.activateModeToOpenInNewForegroundTab",
+  "keyMappings": "map F LinkHints.activateModeToOpenInNewForegroundTab\nmap yv LinkHints.activateMode action=copy-text\nmap yh LinkHints.activateMode action=hover",
   "linkHintCharacters": "sadfjklewcmpgh",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",
