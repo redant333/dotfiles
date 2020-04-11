@@ -27,6 +27,10 @@ unsetopt share_history
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
+# Make Ctrl+P and Ctrl+N do the same as arrows
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
+
 #########################################################
 # Aliases                                               #
 #########################################################
@@ -51,10 +55,12 @@ alias op='xdg-open'
 alias acs='apt-cache search'
 alias fd='noglob find . -type d -name'
 alias ff='noglob find . -type f -name'
+alias fif='find . -type f -iname'
 alias grepc='grep -r --include=\*.{c,cpp,cc}'
 alias greph='grep -r --include=\*.{h,hpp,hh}'
 alias -g G='| grep'
 alias -g L="| less"
+alias -g S='> /dev/null 2>&1'
 alias -g difftool="difftool --dir-diff"
 
 # Simple calculator
