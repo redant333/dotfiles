@@ -55,13 +55,14 @@ alias op='xdg-open'
 alias acs='apt-cache search'
 alias fd='noglob find . -type d -name'
 alias ff='noglob find . -type f -name'
-alias fif='find . -type f -iname'
+alias fif='noglob find . -type f -iname'
 alias grepc='grep -r --include=\*.{c,cpp,cc}'
 alias greph='grep -r --include=\*.{h,hpp,hh}'
 alias -g G='| grep'
 alias -g L="| less"
 alias -g S='> /dev/null 2>&1'
 alias -g difftool="difftool --dir-diff"
+alias -g LL='*(.om[1])'
 
 # Simple calculator
 function calculate {
@@ -70,3 +71,5 @@ function calculate {
 	printf 'res: %s\ndec: %d\nhex: %X\n' "$result" "$result" "$result"
 }
 alias c='noglob calculate'
+
+alias unswap='sudo swapoff -a && sudo swapon -a'
