@@ -23,16 +23,20 @@ call plug#begin('~/.vim/plugged')
 Plug 'tomasiser/vim-code-dark'
 Plug 'mg979/vim-visual-multi'
 Plug 'justinmk/vim-sneak'
+Plug 'preservim/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
 " Color scheme
 colorscheme codedark
 set background=dark
-highlight SpecialKey ctermfg=grey guifg=grey70
 
-" Leader mapping
+" Key mapping
 let mapleader = " "
+map <leader>T :NERDTreeFind<cr>
 
 " Set labe label mode for sneak
 let g:sneak#label = 1
+
