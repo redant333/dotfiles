@@ -1,6 +1,6 @@
 {
-    /* General purpose extensions:
-       jumpy                            code --install-extension johnpyp.vscode-jumpy-plus
+   /* General purpose extensions:
+       metaGo                           code --install-extension metaseed.metago
        Bookmarks                        code --install-extension alefragnani.Bookmarks
        Bracket Pair Colorizer           code --install-extension CoenraadS.bracket-pair-colorizer
        Highlight Trailing White Spaces  code --install-extension ybaumes.highlight-trailing-white-spaces
@@ -10,29 +10,60 @@
        C/C++                            code --install-extension ms-vscode.cpptools
        Doxygen Documentation Generator  code --install-extension cschlosser.doxdocgen
     */
-
-    /* Use JSON instead of GUI editor */
-    "workbench.settings.editor": "json",
-
-    /* Hide the twitter smiley */
-    "workbench.statusBar.feedback.visible": false,
-
-    /* Turn off explorer decorations (I find them annoying) */
-    "problems.decorations.enabled": false,
-    "explorer.decorations.badges": false,
-    "explorer.decorations.colors": false,
-
-    /* Set a larger font*/
-    "editor.fontSize": 18,
-
-    /* Render whitespace */
-    "editor.renderControlCharacters": true,
-    "editor.renderWhitespace": "all",
-
-    /* Put snippets on top of autocomplete
+   /* Use JSON instead of GUI editor */
+   "workbench.settings.editor": "json",
+   /* Hide the twitter smiley */
+   "workbench.statusBar.feedback.visible": false,
+   /* Turn off explorer decorations (I find them annoying) */
+   "problems.decorations.enabled": false,
+   "explorer.decorations.badges": false,
+   "explorer.decorations.colors": false,
+   /* Set a larger font*/
+   "editor.fontSize": 18,
+   /* Render whitespace */
+   "editor.renderControlCharacters": true,
+   "editor.renderWhitespace": "all",
+   /* Put snippets on top of autocomplete
        By default, keywords come before them */
-    "editor.snippetSuggestions": "top",
-
-    /* Do not dim regions under #ifdef */
-    "C_Cpp.dimInactiveRegions": false,
+   "editor.snippetSuggestions": "top",
+   /* Do not dim regions under #ifdef */
+   "C_Cpp.dimInactiveRegions": false,
+   /* metaGo settings */
+   "metaGo.surroundPairs": [
+      [
+         "{",
+         "}"
+      ],
+      [
+         "(",
+         ")"
+      ],
+      [
+         "[",
+         "]"
+      ],
+      [
+         "<",
+         ">"
+      ],
+      [
+         // HTML tag (from metaGo defaults)
+         "/<(?!/)(?!!)(?!br[\\s>])(?!area[\\s>])(?!base[\\s>])(?!col[\\s>])(?!command[\\s>])(?!embed[\\s>])(?!hr[\\s>])(?!img[\\s>])(?!input[\\s>])(?!keygen[\\s>])(?!link[\\s>])(?!meta[\\s>])(?!param[\\s>])(?!source[\\s>])(?!track[\\s>])(?!wbr[\\s>])((?:.(?!/>))+?)(?<!/)>/ms",
+         "/</(.+?)>/",
+         "t"
+      ],
+      [
+         // Word
+         "/[^0-9a-zA-Z]/",
+         "/[^0-9a-zA-Z]/",
+         "w"
+      ],
+      [
+         // Whole line (ignoring spaces at the beginning)
+         "/\n[ ]*/",
+         "/\n/",
+         "l"
+      ]
+   ],
+   "metaGo.decoration.backgroundOpacity": "1"
 }
