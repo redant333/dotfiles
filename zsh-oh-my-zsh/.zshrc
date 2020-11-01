@@ -63,6 +63,7 @@ alias -g L="| less"
 alias -g S='> /dev/null 2>&1'
 alias -g difftool="difftool --dir-diff"
 alias -g LL='*(.om[1])'
+alias unswap='sudo swapoff -a && sudo swapon -a'
 
 # Simple calculator
 function calculate {
@@ -71,5 +72,3 @@ function calculate {
 	printf 'res: %s\ndec: %d\nhex: %X\n' "$result" "$result" "$result"
 }
 alias c='noglob calculate'
-
-alias unswap='sudo swapoff -a && sudo swapon -a'

@@ -12,6 +12,8 @@ This folder contains the following:
 4. Download `.zshrc` and replace the one in your home folder.
 
 ## Automatic
+| :warning: This has only only been tested on Ubuntu 18 and there are probably some things I haven't thought about. Check the script before running it.|
+| - |
 
 Run:
 
