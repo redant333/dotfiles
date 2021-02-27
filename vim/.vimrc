@@ -24,8 +24,6 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'mg979/vim-visual-multi'
 Plug 'justinmk/vim-sneak'
 Plug 'preservim/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -40,3 +38,6 @@ map <leader>T :NERDTreeFind<cr>
 " Set labe label mode for sneak
 let g:sneak#label = 1
 
+" Statusline customization
+autocmd InsertEnter * hi ModeMsg term=bold ctermbg=166 ctermfg=0 guifg=#000000 guibg=#d75f00
+autocmd InsertLeave * hi ModeMsg term=bold ctermfg=188 ctermbg=235 guifg=#D4D4D4 guibg=#252526
