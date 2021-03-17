@@ -25,5 +25,8 @@ return
 WinActivate, ahk_exe chrome.exe
 return
 
-
-
+Pause::
+If WinActive("ahk_class ConsoleWindowClass")
+    WinMinimize ahk_class ConsoleWindowClass
+Else
+    WinActivate ahk_class ConsoleWindowClass
