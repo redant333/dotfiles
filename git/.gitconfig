@@ -1,5 +1,5 @@
 [user]
-        email = 
+        email = #email#
         name = Milomir Babic
 [difftool]
         prompt = false
