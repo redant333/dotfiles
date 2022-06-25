@@ -1,0 +1,4 @@
+zsh
+git
+wget
+source-highlight
