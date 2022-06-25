@@ -17,6 +17,13 @@ set lcs=tab:┌─,trail:·,space:·
 " Show typed commands
 set showcmd
 
+"Install plug, instructions from https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Plugins
 call plug#begin('~/.vim/plugged')
 
@@ -30,7 +37,7 @@ autocmd ColorScheme * highlight TrailingWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * match TrailingWhitespace /\s\+$/
 
 " Color scheme
-colorscheme codedark
+:silent! colorscheme codedark
 set background=dark
 
 " Set label mode for sneak
