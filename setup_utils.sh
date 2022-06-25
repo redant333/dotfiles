@@ -38,3 +38,21 @@ function install_link() {
 
     inform "$to installed"
 }
+
+function yesno() {
+    question=$1
+
+    REPLY='n/a'
+    while ! [[ $REPLY =~ ^[YyNn]$ ]];
+    do
+        read -p "$question [y/n] " -n 1 -r
+    done
+
+    echo
+
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        return 0
+    elif [[ $REPLY =~ ^[Nn]$ ]]; then
+        return 1
+    fi
+}
