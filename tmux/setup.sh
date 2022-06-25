@@ -10,7 +10,7 @@ inform "Setting up tmux"
 install_dependencies "$relative/deps.txt"
 
 inform "Installing tmux-picker"
-if [[ ! -d ~/.oh-my-zsh ]]; then
+if [[ ! -d ~/.tmux/tmux-picker ]]; then
     mkdir -p ~/.tmux
     git clone https://github.com/pawel-wiejacha/tmux-picker ~/.tmux/tmux-picker
 else

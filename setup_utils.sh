@@ -34,6 +34,7 @@ function install_link() {
         mv "$to" "$backup_name"
     fi
 
+    mkdir -p "$(dirname "$to")"
     ln -s "$(realpath "$from")" "$to"
 
     inform "$to installed"
