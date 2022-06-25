@@ -15,7 +15,7 @@ function install_dependencies() {
     dependencies_file="$1"
 
     inform "Installing dependencies from $dependencies_file, this requires sudo privileges"
-    sed 's/#.*//' "$dependencies_file" | xargs sudo apt-get install
+    sed 's/#.*//' "$dependencies_file" | xargs sudo apt-get -y install
 }
 
 function install_link() {
