@@ -18,7 +18,7 @@ A dmenu based script for inserting long text snippets for situations when aliase
 
 :open_file_folder: **vim**
 
-`.vimrc` I'm experimenting with. Wouldn't trust it too much if I were you.
+A simple vim setup.
 
 :open_file_folder: **vimium**
 
@@ -33,8 +33,5 @@ VisualStudio Code settings and keybindings. Also contains a list of useful exten
 `.zshrc` for use with oh-my-zsh. Most notable features:
 - Syntax highlighting for `less`
 - Bunch of aliases
-- Nice calculator function (execute with `c 1 + 3`)
+- A nice calculator function (execute with `c 1 + 3`)
 - Custom theme (because oh-my-zsh does not have enough of them, it seems)
-- Auto installation script (check [README.md](https://github.com/redant333/dotfiles/tree/master/zsh-oh-my-zsh))
-
-
