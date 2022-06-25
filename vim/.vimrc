@@ -12,7 +12,7 @@ set smartcase
 set incsearch
 
 " Show whitespace
-set list lcs=tab:┌─,trail:·
+set lcs=tab:┌─,trail:·,space:·
 
 " Show typed commands
 set showcmd
@@ -21,21 +21,19 @@ set showcmd
 call plug#begin('~/.vim/plugged')
 
 Plug 'tomasiser/vim-code-dark'
-Plug 'mg979/vim-visual-multi'
 Plug 'justinmk/vim-sneak'
-Plug 'preservim/nerdtree'
 
 call plug#end()
+
+" Highlight trailing spaces
+autocmd ColorScheme * highlight TrailingWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * match TrailingWhitespace /\s\+$/
 
 " Color scheme
 colorscheme codedark
 set background=dark
 
-" Key mapping
-let mapleader = " "
-map <leader>T :NERDTreeFind<cr>
-
-" Set labe label mode for sneak
+" Set label mode for sneak
 let g:sneak#label = 1
 
 " Statusline customization
