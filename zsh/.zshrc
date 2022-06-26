@@ -19,10 +19,6 @@ source $ZSH/oh-my-zsh.sh
 # Configuration                                         #
 #########################################################
 
-# Disable shared history. This means that every terminal
-# instance will have its own history.
-unsetopt share_history
-
 # Give syntax highlighting abilities to less (needs source-highlight package)
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
