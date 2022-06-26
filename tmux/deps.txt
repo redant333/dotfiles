@@ -1,2 +1,4 @@
 tmux
 git
+gawk
+xclip
