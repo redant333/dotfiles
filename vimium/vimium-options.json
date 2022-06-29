@@ -1,5 +1,5 @@
 {
-  "settingsVersion": "1.66",
+  "settingsVersion": "1.67",
   "exclusionRules": [
     {
       "pattern": "https?://mail.google.com/*",
@@ -20,7 +20,7 @@
   "scrollStepSize": 60,
   "smoothScroll": false,
   "grabBackFocus": true,
-  "searchEngines": "img: http://images.google.com/images?q=%s\nyt: https://www.youtube.com/results?search_query=%s\ncpp: http://www.cplusplus.com/search.do?q=%s",
+  "searchEngines": "img: http://images.google.com/images?q=%s\nyt: https://www.youtube.com/results?search_query=%s\ncpp: http://www.cplusplus.com/search.do?q=%s\nfl: http://folkets-lexikon.csc.kth.se/folkets/folkets.en.html#lookup&%s&0\nwk: https://en.wiktionary.org/wiki/%s#Swedish",
   "searchUrl": "https://www.google.com/search?q=",
   "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
 }
