@@ -12,13 +12,21 @@ Two AutoHotkey scripts,
 
 Simple `.gitconfig` with custom log format and some tig settings.
 
+:open_file_folder: **guake**
+
+Settings for minimal Guake appearance. Tabs and splits are handled by TMUX, so guake is set to be tabless and borderless.
+
 :open_file_folder: **snippets_script**
 
 A dmenu based script for inserting long text snippets for situations when aliases and functions are not applicable. See [README.md](https://github.com/redant333/dotfiles/tree/master/snippets_script) for more info.
 
+:open_file_folder: **tmux**
+
+TMUX setup with custom hotkeys, modified look and tmux-picker.
+
 :open_file_folder: **vim**
 
-A simple vim setup.
+A simple vim setup with custom theme and vim-sneak.
 
 :open_file_folder: **vimium**
 
