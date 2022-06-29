@@ -24,7 +24,7 @@ export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
 # Make Ctrl+P and Ctrl+N do the same as arrows
-bindkey "^P" up-line-or-search
+bindkey "^P" up-line-or-beginning-search
 bindkey "^N" down-line-or-search
 
 #########################################################
