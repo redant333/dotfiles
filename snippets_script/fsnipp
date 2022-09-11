@@ -1,0 +1,23 @@
+#!/bin/bash
+# The location where all the items are stored
+snipps_file=~/.snipps.json
+# Create snipps_file if it doesn't exist
+if [[ ! -f $snipps_file ]]
+then
+    echo -e "{\n\"This is a default item. Edit this in $snipps_file\" : \"value to be copied\"\n}" > $snipps_file
+fi
+
+# Read all the keys and choose one with fzf
+keys=$(jq -r 'keys[]' < $snipps_file)
+chosen_key=$(echo "$keys" | fzf --algo=v2 -i --layout=reverse --info=hidden --color=16 --margin=1)
+
+if [[ $? == 0 ]]
+then
+    # Parse the value associated with the key
+    output=$(jq -r ".\"$chosen_key\"" < $snipps_file)
+
+    echo -n $output
+else
+    exit $?
+fi
+

@@ -1,7 +1,4 @@
 #!/bin/bash
-####################################################
-# This script requires jq, dmenu and xclip packages
-####################################################
 
 # The location where all the items are stored
 snipps_file=~/.snipps.json

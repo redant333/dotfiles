@@ -10,3 +10,6 @@ install_dependencies "$relative/deps.txt"
 
 mkdir -p ~/bin
 install_link "$relative/snipp" "$HOME/bin/snipp"
+install_link "$relative/fsnipp" "$HOME/bin/fsnipp"
+install_link "$relative/fsnipp-tmux" "$HOME/bin/fsnipp-tmux"
+
