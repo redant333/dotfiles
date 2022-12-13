@@ -11,6 +11,7 @@ ZSH_THEME="ghi"
 plugins=(
 sudo
 wd
+command-not-found
 )
 
 source $ZSH/oh-my-zsh.sh
