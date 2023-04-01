@@ -13,5 +13,12 @@
         full = show --pretty=fuller
 [tig "color"]
 	cursor = black white
+[tig "color.main"]
+	id = red default
+	author = blue default bold
+	date = green default
+	commit-title = gray default
 [tig "bind"]
 	status = A !git commit --amend
+[tig]
+	main-view = id:yes date:display=relative author:display:full commit-title:graph=v2,refs=yes 
