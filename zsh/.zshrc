@@ -12,6 +12,7 @@ plugins=(
 sudo
 wd
 command-not-found
+#vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -20,9 +21,12 @@ source $ZSH/oh-my-zsh.sh
 # Configuration                                         #
 #########################################################
 
-# Give syntax highlighting abilities to less (needs source-highlight package)
-export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
-export LESS=' -R '
+# Give syntax highlighting abilities to less (needs bat package)
+if command -v batcat &> /dev/null
+then
+	export LESSOPEN='| for source in "%s"; do batcat --plain --pager=never --force-colorization "$source" ; done'
+	export LESS=' -R '
+fi
 
 # Make Ctrl+P and Ctrl+N do the same as arrows
 bindkey "^P" up-line-or-beginning-search

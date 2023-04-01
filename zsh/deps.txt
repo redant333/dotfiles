@@ -1,4 +1,5 @@
 zsh
 git
 wget
-source-highlight
+bat
+
