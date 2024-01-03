@@ -338,4 +338,4 @@ Return
 ;┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ;┃ Other                                                                      ┃
 ;┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-#F12::Reload ; Useful during development, should be commented out otherwise
+;#F12::Reload ; Useful during development, should be commented out otherwise
