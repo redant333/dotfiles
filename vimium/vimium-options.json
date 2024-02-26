@@ -9,7 +9,7 @@
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": false,
-  "keyMappings": "map F LinkHints.activateModeToOpenInNewForegroundTab\nmap yv LinkHints.activateMode action=copy-text\nmap yh LinkHints.activateMode action=hover",
+  "keyMappings": "map F LinkHints.activateModeToOpenInNewForegroundTab\nmap yv LinkHints.activateMode action=copy-text\nmap yh LinkHints.activateMode action=hover\nmap s passNextKey",
   "linkHintCharacters": "sadfjklewcmpgh",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",
