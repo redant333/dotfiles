@@ -19,6 +19,8 @@
 	date = green default
 [tig "bind"]
 	status = A !git commit --amend
+	main = F !git commit --fixup=%(commit)
+	main = R !git rebase -i --autosquash %(commit)
 [tig]
 	main-view = id:yes date:display=relative author:display:full commit-title:graph=v2,refs=yes
 
