@@ -4,7 +4,7 @@ buffer=fsnipp-tmux-buffer
 
 tmux wait -L $lock
 tmux deleteb -b $buffer 2> /dev/null
-tmux new-window -n "fsnipp" "fsnipp | tmux loadb -b $buffer - ; tmux wait -U $lock"
+tmux new-window -n "fsnipp" "~/bin/fsnipp | tmux loadb -b $buffer - ; tmux wait -U $lock"
 
 tmux wait -L $lock
 tmux wait -U $lock
