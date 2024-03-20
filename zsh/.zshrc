@@ -53,6 +53,8 @@ alias iploc='curl ipinfo.io' # Print public IP and IP location. Useful when work
 # General purpose
 alias rc='vim ~/.zshrc'
 alias op='xdg-open'
+# Use under WSL
+# alias op='wslview'
 alias acs='apt-cache search'
 alias fd='noglob find . -type d -name'
 alias ff='noglob find . -type f -name'
