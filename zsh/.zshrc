@@ -24,7 +24,7 @@ source $ZSH/oh-my-zsh.sh
 # Give syntax highlighting abilities to less (needs bat package)
 if command -v batcat &> /dev/null
 then
-	export LESSOPEN='| for source in "%s"; do batcat --plain --pager=never --force-colorization "$source" ; done'
+	export LESSOPEN='| for source in "%s"; do bat --theme=TwoDark --plain --pager=never --force-colorization "$source" ; done'
 	export LESS=' -R '
 fi
 
