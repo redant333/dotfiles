@@ -3,6 +3,7 @@ setopt PROMPT_SUBST
 PROMPT_SYMBOL="ᗈ"
 
 # Current folder on the left side and Git branch on the right side
+precmd() { print "" }
 PROMPT='%{$fg_bold[red]%}${PROMPT_SYMBOL} %{$reset_color%}%~%{$fg_bold[red]%} : %{$reset_color%}'
 # Use for a prompt that includes the current week number
 # PROMPT='%{$fg_bold[red]%}${PROMPT_SYMBOL} %{$fg_bold[blue]%}$(date +%V) %{$reset_color%}%~%{$fg_bold[red]%} : %{$reset_color%}'
