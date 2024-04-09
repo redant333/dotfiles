@@ -8,22 +8,27 @@
         "command": "workbench.action.previousEditor"
     },
     {
-        "key": "ctrl+j",
-        "command": "metaGo.gotoSmart"
-    },
-    {
-        "key": "ctrl+i",
-        "command": "metaGo.inSurroundingPairSelection",
-        "when": "editorTextFocus"
-    },
-    {
         "key": "shift+space",
         "command": "editor.action.quickFix",
         "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+.",
-        "command": "-editor.action.quickFix",
-        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+        "key": "alt+e",
+        "command": "errorLens.toggle",
+        "when": "editorHasCodeActionsProvider && editorTextFocus"
+    },
+    {
+        "key": "alt+f",
+        "command": "toggleVim",
+    },
+    {
+        "key": "escape",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "sideBarFocus"
+    },
+    {
+        "key": "space",
+        "command": "whichkey.show",
+        "when": "!inputFocus || (editorTextFocus && vim.active && vim.mode != 'Insert')"
     },
 ]

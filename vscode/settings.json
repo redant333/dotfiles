@@ -1,13 +1,17 @@
 {
    /* General purpose extensions:
-       metaGo                           code --install-extension metaseed.metago
        Bookmarks                        code --install-extension alefragnani.Bookmarks
        Highlight Trailing White Spaces  code --install-extension ybaumes.highlight-trailing-white-spaces
-       git-blamer                       code --install-extension howardzuo.vscode-git-blamer
+       Error Lens                       code --install-extension usernamehw.errorlens
+       Vim                              code --install-extension vscodevim.vim
+       Which Key                        code --install-extension VSpaceCode.whichkey
 
       C++ extensions:
        C/C++                            code --install-extension ms-vscode.cpptools
        Doxygen Documentation Generator  code --install-extension cschlosser.doxdocgen
+
+      Rust:
+       rust-analyzer                    code --install-extension rust-lang.rust-analyzer
 
       Shell script extensions:
        ShellCheck                       code --install-extension timonwong.shellcheck
@@ -24,7 +28,7 @@
    "workbench.editor.decorations.badges": false,
 
    /* Set a larger font*/
-   "editor.fontSize": 18,
+   "editor.fontSize": 17,
 
    /* Render whitespace */
    "editor.renderControlCharacters": true,
@@ -41,42 +45,172 @@
    "workbench.editor.enablePreviewFromQuickOpen": true,
    "workbench.editor.enablePreviewFromCodeNavigation": true,
 
-   /* metaGo settings */
-   "metaGo.surroundPairs": [
-      [
-         "{",
-         "}"
-      ],
-      [
-         "(",
-         ")"
-      ],
-      [
-         "[",
-         "]"
-      ],
-      [
-         "<",
-         ">"
-      ],
-      [
-         // HTML tag (from metaGo defaults)
-         "/<(?!/)(?!!)(?!br[\\s>])(?!area[\\s>])(?!base[\\s>])(?!col[\\s>])(?!command[\\s>])(?!embed[\\s>])(?!hr[\\s>])(?!img[\\s>])(?!input[\\s>])(?!keygen[\\s>])(?!link[\\s>])(?!meta[\\s>])(?!param[\\s>])(?!source[\\s>])(?!track[\\s>])(?!wbr[\\s>])((?:.(?!/>))+?)(?<!/)>/ms",
-         "/</(.+?)>/",
-         "t"
-      ],
-      [
-         // Word
-         "/[^0-9a-zA-Z]/",
-         "/[^0-9a-zA-Z]/",
-         "w"
-      ],
-      [
-         // Whole line (ignoring spaces at the beginning)
-         "/\n[ ]*/",
-         "/\n/",
-         "l"
-      ]
-   ],
-   "metaGo.decoration.backgroundOpacity": "1"
+   /* Vim emulation */
+       "vim.handleKeys": {
+        "<C-s>": false,
+        "<C-z>": false,
+        "<C-y>": false,
+        "<C-f>": false,
+        "<C-h>": false,
+        "<C-n>": false,
+        "<C-w>": false,
+        "<C-p>": false,
+    },
+
+    "vim.easymotion": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "s"
+            ],
+            "after": [
+                "leader",
+                "leader",
+                "2",
+                "s"
+            ]
+        }
+    ],
+    "whichkey.useFullWidthCharacters": true,
+    "whichkey.bindings": [
+        {
+            "key": "l",
+            "name": "✴️ LSP",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "e",
+                    "name": "Toggle Error Lens",
+                    "type": "command",
+                    "command": "errorLens.toggle",
+                    "when": "editorHasCodeActionsProvider && editorTextFocus"
+                },
+                {
+                    "key": "f",
+                    "name": "Format Document",
+                    "type": "command",
+                    "command": "editor.action.formatDocument"
+                },
+                {
+                    "key": "r",
+                    "name": "Rename Symbol",
+                    "type": "command",
+                    "command": "editor.action.rename"
+                },
+                {
+                    "key": "a",
+                    "name": "Quick Fix",
+                    "type": "command",
+                    "command": "editor.action.quickFix"
+                },
+                {
+                    "key": "l",
+                    "name": "CodeLens Action",
+                    "type": "command",
+                    "command": "codelens.showLensesInCurrentLine"
+                },
+                {
+                    "key": "S",
+                    "name": "Workspace Symbols",
+                    "type": "command",
+                    "command": "workbench.action.showAllSymbols"
+                },
+                {
+                    "key": "s",
+                    "name": "Document Symbols",
+                    "type": "command",
+                    "command": "workbench.action.gotoSymbol"
+                },
+            ]
+        },
+        {
+            "key": "y",
+            "name": "✴️ Yank",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "P",
+                    "name": "Full File Path",
+                    "type": "command",
+                    "command": "copyFilePath"
+                },
+                {
+                    "key": "p",
+                    "name": "Relative File Path",
+                    "type": "command",
+                    "command": "copyRelativeFilePath"
+                },
+            ]
+        },
+        {
+            "key": "g",
+            "name": "✴️ Git",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "N",
+                    "name": "Show Previous Change",
+                    "type": "command",
+                    "command": "editor.action.dirtydiff.previous"
+                },
+                {
+                    "key": "n",
+                    "name": "Show Next Change",
+                    "type": "command",
+                    "command": "editor.action.dirtydiff.next"
+                },
+                {
+                    "key": "r",
+                    "name": "Revert Selected Range",
+                    "type": "commands",
+                    "commands": [
+                        "git.revertSelectedRanges",
+                        "extension.vim_escape"
+                    ]
+                },
+            ]
+        },
+        {
+            "key": "w",
+            "name": "Save",
+            "type": "command",
+            "command": "workbench.action.files.save"
+        },
+        {
+            "key": "c",
+            "name": "Close tab",
+            "type": "command",
+            "command": "workbench.action.closeActiveEditor"
+        },
+        {
+            "key": "/",
+            "name": "Comment",
+            "type": "command",
+            "command": "editor.action.commentLine"
+        },
+    ],
+
+   /* Inlay hints customization */
+   "workbench.colorCustomizations": {
+      "[Default Dark+]": {
+        "editorInlayHint.foreground": "#acacacf0",
+        "editorInlayHint.background": "#383838",
+      }
+   },
+
+   /* Rust configuration */
+   "[rust]": {
+      "editor.formatOnSave": false,
+      "editor.inlayHints.enabled": "offUnlessPressed",
+      "editor.quickSuggestions": {
+         "other": "off",
+         "comments": "off",
+         "strings": "off"
+      },
+   },
+   "rust-analyzer.check.command": "clippy",
+
+   /* Customize Error Lens behavior so they are not annoying */
+   "errorLens.enabled": false,
+   "errorLens.onSave": true,
 }
