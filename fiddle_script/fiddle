@@ -1,0 +1,114 @@
+#!/usr/bin/env python3
+import os
+import subprocess
+import sys
+import tempfile
+
+from argparse import ArgumentParser
+from pathlib import Path
+
+
+class CFiddle:
+    def __init__(self, in_dir: Path):
+        self._main_file = in_dir / "test.c"
+        self._main_file.write_text("\n".join([
+            "#include <stdio.h>",
+            "#include <stdint.h>",
+            "",
+            "int main() {",
+            "    int a = 0;",
+            '    printf("%d\\n", a);',
+            "",
+            "    return 0;",
+            "}",
+        ]))
+
+    def get_working_dir(self) -> Path:
+        return self._main_file.parent
+
+    def get_command(self) -> str:
+        return f"gcc -Wall {self._main_file.name} && ./a.out"
+
+    def get_main_path(self) -> Path:
+        return self._main_file
+
+
+class CppFiddle:
+    def __init__(self, in_dir: Path):
+        self._main_file = in_dir / "test.cpp"
+        self._main_file.write_text("\n".join([
+            "#include <iostream>",
+            "#include <cstdint>",
+            "",
+            "int main() {",
+            "    int a = 0;",
+            "    std::cout << a << '\\n';",
+            "",
+            "    return 0;",
+            "}",
+        ]))
+
+    def get_working_dir(self) -> Path:
+        return self._main_file.parent
+
+    def get_command(self) -> str:
+        return f"g++ -Wall {self._main_file.name} && ./a.out"
+
+    def get_main_path(self) -> Path:
+        return self._main_file
+
+
+class RustFiddle:
+    def __init__(self, in_dir: Path):
+        subprocess.run(
+            args=f"cargo init --vcs=none --bin {in_dir}", shell=True)
+        self._working_dir = in_dir
+
+    def get_working_dir(self) -> Path:
+        return self._working_dir
+
+    def get_command(self) -> str:
+        return "cargo run"
+
+    def get_main_path(self) -> Path:
+        return self._working_dir / "src" / "main.rs"
+
+
+FIDDLES = {
+    "c": CFiddle,
+    "cpp": CppFiddle,
+    "rust": RustFiddle,
+}
+
+
+def parse_args():
+    parser = ArgumentParser(
+        description="Open a new tmux window with the editor for the chosen language")
+    parser.add_argument("language", choices=FIDDLES.keys())
+
+    args = parser.parse_args()
+
+    return args
+
+
+def main():
+    if "TMUX" not in os.environ:
+        print("ERROR: Can only be run from inside a tmux session")
+        sys.exit(1)
+
+    args = parse_args()
+
+    temp_dir = Path(tempfile.mkdtemp())
+    fiddle = FIDDLES[args.language](temp_dir)
+
+    subprocess.run(shell=True, args=f"""
+    tmux new-window -n fiddle 'vim {fiddle.get_main_path()}; tmux kill-window'
+    tmux split-window -h -c {fiddle.get_working_dir()}
+
+    tmux set-buffer -b dabble_command '{fiddle.get_command()}' && tmux paste-buffer -d
+    tmux select-pane -t 0
+    """)
+
+
+if __name__ == "__main__":
+    main()
