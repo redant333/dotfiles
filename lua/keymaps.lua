@@ -45,4 +45,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Add the save hotkey
+vim.keymap.set('n', '<leader>w', '<cmd>:w<cr>', { desc = 'Save' })
+
 -- vim: ts=2 sts=2 sw=2 et
