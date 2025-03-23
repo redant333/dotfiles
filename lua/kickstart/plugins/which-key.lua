@@ -64,6 +64,7 @@ return {
       --  { '<leader>d', group = '[D]ocument' },
       --  { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = 'Telescope search' },
+        { '<leader>l', group = 'LSP', mode = {'n', 'x' } },
       --  { '<leader>w', group = '[W]orkspace' },
       --  { '<leader>t', group = '[T]oggle' },
       --  { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
