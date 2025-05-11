@@ -17,9 +17,6 @@
        ShellCheck                       code --install-extension timonwong.shellcheck
     */
 
-   /* Use JSON instead of GUI editor */
-   "workbench.settings.editor": "json",
-
    /* Turn off decorations (I find them annoying) */
    "problems.decorations.enabled": false,
    "explorer.decorations.badges": false,
@@ -55,22 +52,49 @@
         "<C-n>": false,
         "<C-w>": false,
         "<C-p>": false,
+        "<C-t>": false
     },
-
-    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.foldfix": true,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
-                "s"
+                "u"
             ],
-            "after": [
-                "leader",
-                "leader",
-                "2",
-                "s"
-            ]
-        }
-    ],
+            "after": [],
+            "commands": [
+               {
+                   "command": "undo",
+                   "args": []
+               }
+           ]
+       },
+       {
+           "before": [
+               "<C-r>"
+           ],
+           "after": [],
+           "commands": [
+               {
+                   "command": "redo",
+                   "args": []
+               }
+           ]
+       },
+       {
+           "before": [
+               "g",
+               "D"
+           ],
+           "after": [],
+           "commands": [
+               {
+                   "command": "editor.action.revealDefinitionAside",
+                   "args": []
+               }
+           ]
+       }
+   ],
     "whichkey.useFullWidthCharacters": true,
     "whichkey.bindings": [
         {
@@ -120,6 +144,18 @@
                     "name": "Document Symbols",
                     "type": "command",
                     "command": "workbench.action.gotoSymbol"
+                },
+                {
+                    "key": "n",
+                    "name": "Go To Next Error/Warning/Info",
+                    "type": "command",
+                    "command": "editor.action.marker.next"
+                },
+                {
+                    "key": "N",
+                    "name": "Go To Previous Error/Warning/Info",
+                    "type": "command",
+                    "command": "editor.action.marker.prev"
                 },
             ]
         },
@@ -188,8 +224,13 @@
             "type": "command",
             "command": "editor.action.commentLine"
         },
-    ],
-
+        {
+            "key": "z",
+            "name": "Zoom Split",
+            "type": "command",
+            "command": "workbench.action.toggleMaximizeEditorGroup"
+        },
+   ],
    /* Inlay hints customization */
    "workbench.colorCustomizations": {
       "[Default Dark+]": {
@@ -213,4 +254,18 @@
    /* Customize Error Lens behavior so they are not annoying */
    "errorLens.enabled": false,
    "errorLens.onSave": true,
+
+   "editor.semanticTokenColorCustomizations": {
+       "rules": {
+           "variable.global:cpp": {
+               "underline": true
+           },
+           "variable.global:c": {
+               "underline": true
+           },
+           "parameter": {
+               "italic": true
+           }
+       }
+   },
 }
