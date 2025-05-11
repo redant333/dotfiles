@@ -1,5 +1,5 @@
 {
-   /* General purpose extensions:
+    /* General purpose extensions:
        Bookmarks                        code --install-extension alefragnani.Bookmarks
        Highlight Trailing White Spaces  code --install-extension ybaumes.highlight-trailing-white-spaces
        Error Lens                       code --install-extension usernamehw.errorlens
@@ -16,34 +16,27 @@
       Shell script extensions:
        ShellCheck                       code --install-extension timonwong.shellcheck
     */
-
-   /* Turn off decorations (I find them annoying) */
-   "problems.decorations.enabled": false,
-   "explorer.decorations.badges": false,
-   "explorer.decorations.colors": false,
-   "workbench.editor.decorations.colors": false,
-   "workbench.editor.decorations.badges": false,
-
-   /* Set a larger font*/
-   "editor.fontSize": 17,
-
-   /* Render whitespace */
-   "editor.renderControlCharacters": true,
-   "editor.renderWhitespace": "all",
-
-   /* Put snippets on top of autocomplete
+    /* Turn off decorations (I find them annoying) */
+    "problems.decorations.enabled": false,
+    "explorer.decorations.badges": false,
+    "explorer.decorations.colors": false,
+    "workbench.editor.decorations.colors": false,
+    "workbench.editor.decorations.badges": false,
+    /* Set a larger font*/
+    "editor.fontSize": 17,
+    /* Render whitespace */
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    /* Put snippets on top of autocomplete
    By default, keywords come before them */
-   "editor.snippetSuggestions": "top",
-
-   /* Do not dim regions under #ifdef */
-   "C_Cpp.dimInactiveRegions": false,
-
-   /* Enable preview tabs on Ctrl+P and code navigation */
-   "workbench.editor.enablePreviewFromQuickOpen": true,
-   "workbench.editor.enablePreviewFromCodeNavigation": true,
-
-   /* Vim emulation */
-       "vim.handleKeys": {
+    "editor.snippetSuggestions": "top",
+    /* Do not dim regions under #ifdef */
+    "C_Cpp.dimInactiveRegions": false,
+    /* Enable preview tabs on Ctrl+P and code navigation */
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "workbench.editor.enablePreviewFromCodeNavigation": true,
+    /* Vim emulation */
+    "vim.handleKeys": {
         "<C-s>": false,
         "<C-z>": false,
         "<C-y>": false,
@@ -63,38 +56,38 @@
             ],
             "after": [],
             "commands": [
-               {
-                   "command": "undo",
-                   "args": []
-               }
-           ]
-       },
-       {
-           "before": [
-               "<C-r>"
-           ],
-           "after": [],
-           "commands": [
-               {
-                   "command": "redo",
-                   "args": []
-               }
-           ]
-       },
-       {
-           "before": [
-               "g",
-               "D"
-           ],
-           "after": [],
-           "commands": [
-               {
-                   "command": "editor.action.revealDefinitionAside",
-                   "args": []
-               }
-           ]
-       }
-   ],
+                {
+                    "command": "undo",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                "<C-r>"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "redo",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "D"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.revealDefinitionAside",
+                    "args": []
+                }
+            ]
+        }
+    ],
     "whichkey.useFullWidthCharacters": true,
     "whichkey.bindings": [
         {
@@ -230,42 +223,39 @@
             "type": "command",
             "command": "workbench.action.toggleMaximizeEditorGroup"
         },
-   ],
-   /* Inlay hints customization */
-   "workbench.colorCustomizations": {
-      "[Default Dark+]": {
-        "editorInlayHint.foreground": "#acacacf0",
-        "editorInlayHint.background": "#383838",
-      }
-   },
-
-   /* Rust configuration */
-   "[rust]": {
-      "editor.formatOnSave": false,
-      "editor.inlayHints.enabled": "offUnlessPressed",
-      "editor.quickSuggestions": {
-         "other": "off",
-         "comments": "off",
-         "strings": "off"
-      },
-   },
-   "rust-analyzer.check.command": "clippy",
-
-   /* Customize Error Lens behavior so they are not annoying */
-   "errorLens.enabled": false,
-   "errorLens.onSave": true,
-
-   "editor.semanticTokenColorCustomizations": {
-       "rules": {
-           "variable.global:cpp": {
-               "underline": true
-           },
-           "variable.global:c": {
-               "underline": true
-           },
-           "parameter": {
-               "italic": true
-           }
-       }
-   },
+    ],
+    /* Inlay hints customization */
+    "workbench.colorCustomizations": {
+        "[Default Dark+]": {
+            "editorInlayHint.foreground": "#acacacf0",
+            "editorInlayHint.background": "#383838",
+        }
+    },
+    /* Rust configuration */
+    "[rust]": {
+        "editor.formatOnSave": false,
+        "editor.inlayHints.enabled": "offUnlessPressed",
+        "editor.quickSuggestions": {
+            "other": "off",
+            "comments": "off",
+            "strings": "off"
+        },
+    },
+    "rust-analyzer.check.command": "clippy",
+    /* Customize Error Lens behavior so they are not annoying */
+    "errorLens.enabled": false,
+    "errorLens.onSave": true,
+    "editor.semanticTokenColorCustomizations": {
+        "rules": {
+            "variable.global:cpp": {
+                "underline": true
+            },
+            "variable.global:c": {
+                "underline": true
+            },
+            "parameter": {
+                "italic": true
+            }
+        }
+    },
 }
